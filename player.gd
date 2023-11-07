@@ -63,12 +63,11 @@ func _physics_process(delta):
 	#camera.global_position = global_position + (velocity.clamp(-CAMERA_MAX_VELOCITY, CAMERA_MAX_VELOCITY) * CAMERA_DISTANCE)
 	
 	# Slide down wall
-	if is_on_wall_only() and velocity.y > 0:
-		velocity.y = WALL_SLIDE_SPEED
+	#if is_on_wall_only() and velocity.y > 0:
+	#	velocity.y = WALL_SLIDE_SPEED
 	
 	# Save for coyote timer check
 	var was_touching = is_on_floor() or is_on_wall()
-	
 	
 	velocity.x += walk
 	move_and_slide()
@@ -99,6 +98,8 @@ func _physics_process(delta):
 	
 	if is_on_wall_only():
 		velocity.y *= FRICTION_AIR
+		if velocity.y > 0:
+			velocity.y *= FRICTION_AIR
 	
 	# Handle Jump
 	if is_on_floor() or is_on_wall():
