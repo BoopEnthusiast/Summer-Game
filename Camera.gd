@@ -8,4 +8,4 @@ func _input(event):
 		if _target.length() < mouse_dead_zone:
 			position = Vector2(0,0)
 		else:
-			self.position = _target.normalized() * (_target.length())
+			position = _target.normalized() * (_target.length() - mouse_dead_zone) * 0.5

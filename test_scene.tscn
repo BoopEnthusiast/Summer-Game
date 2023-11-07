@@ -38,11 +38,11 @@ scale = Vector2(17.48, 10.4681)
 position = Vector2(470, -296)
 scale = Vector2(0.202405, 8.44212)
 
+[node name="Platform7" parent="." instance=ExtResource("2_od8jd")]
+position = Vector2(202, -76)
+rotation = -1.5708
+
 [node name="TileMap" type="TileMap" parent="."]
 scale = Vector2(2.64054, 2.64054)
 tile_set = SubResource("TileSet_wdjbf")
 format = 2
-
-[node name="Platform7" parent="." instance=ExtResource("2_od8jd")]
-position = Vector2(202, -76)
-rotation = -1.5708

@@ -26,16 +26,18 @@ var chain_velocity := Vector2(0,0)
 func _input(event):
 	if event is InputEventMouseButton:
 		if event.pressed:
+			print() 
 			# We clicked the mouse -> shoot()
-			grapple_hook.shoot(event.position - get_viewport().size * 0.5)
+			self.get_global_transform_with_canvas()
+			grapple_hook.shoot(event.position - self.get_global_transform_with_canvas().get_origin())
 		else:
 			# We released the mouse -> release()
 			grapple_hook.release()
-
 func _physics_process(delta):
 	# Walking
-	var walk = Input.get_axis("run_left", "run_right") * SPEED #(Input.get_action_strength("run_right") - Input.get_action_strength("run_left")) * SPEED
+	var walk = Input.get_axis("run_left", "run_right") * SPEED
 	
+	#Gravity
 	velocity.y += GRAVITY
 	
 	# Grapple hook 
@@ -92,6 +94,9 @@ func _physics_process(delta):
 		velocity.x *= FRICTION_AIR
 		if velocity.y > 0:
 			velocity.y *= FRICTION_AIR
+	
+	if is_on_wall_only():
+		velocity.y *= FRICTION_AIR
 	
 	# Handle Jump
 	if is_on_floor() or is_on_wall():
