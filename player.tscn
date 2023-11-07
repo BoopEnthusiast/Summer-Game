@@ -32,7 +32,7 @@ position_smoothing_enabled = true
 script = ExtResource("2_inhow")
 
 [node name="CoyoteTimer" type="Timer" parent="."]
-wait_time = 0.2
+wait_time = 0.15
 one_shot = true
 
 [node name="Hook" type="RigidBody2D" parent="."]
