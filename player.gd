@@ -23,6 +23,7 @@ var chain_velocity := Vector2(0,0)
 @onready var camera = $Camera
 @onready var grapple_hook = $Hook
 
+
 func _input(event):
 	if event is InputEventMouseButton:
 		if event.pressed:
@@ -32,6 +33,8 @@ func _input(event):
 		else:
 			# We released the mouse -> release()
 			grapple_hook.release()
+
+
 func _physics_process(delta):
 	# Walking
 	var walk = Input.get_axis("run_left", "run_right") * SPEED
