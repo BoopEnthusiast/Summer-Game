@@ -1,4 +1,5 @@
 extends RigidBody2D
+class_name Hook
 
 const SPEED = 50	# The speed with which the chain moves
 
@@ -9,6 +10,9 @@ var tip := Vector2(0,0)			# The global position the tip should be in
 var flying = false	# Whether the chain is moving through the air
 var hooked = false	# Whether the chain has connected to a wall
 
+func _ready():
+	add_user_signal("object_hooked", [{"name": "object_hit", "type": "TYPE_KINEMATIC_COLLISION_2D"}])
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
 	global_position = tip
@@ -17,6 +21,7 @@ func _physics_process(delta):
 		if collider and collider.get_collider() != player:
 			hooked = true
 			flying = false
+			emit_signal("object_hooked", collider)
 	tip = global_position
 
 func shoot(dir: Vector2):

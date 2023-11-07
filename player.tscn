@@ -28,7 +28,9 @@ scale = Vector2(120, 120)
 texture = SubResource("PlaceholderTexture2D_fjib1")
 
 [node name="Camera" type="Camera2D" parent="."]
+zoom = Vector2(0.75, 0.75)
 position_smoothing_enabled = true
+rotation_smoothing_enabled = true
 script = ExtResource("2_inhow")
 
 [node name="CoyoteTimer" type="Timer" parent="."]
