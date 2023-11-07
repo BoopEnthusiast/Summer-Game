@@ -26,7 +26,6 @@ var chain_velocity := Vector2(0,0)
 func _input(event):
 	if event is InputEventMouseButton:
 		if event.pressed:
-			print() 
 			# We clicked the mouse -> shoot()
 			self.get_global_transform_with_canvas()
 			grapple_hook.shoot(event.position - self.get_global_transform_with_canvas().get_origin())
