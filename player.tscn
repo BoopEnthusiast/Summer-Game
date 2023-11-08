@@ -30,7 +30,7 @@ rotation_smoothing_enabled = true
 script = ExtResource("2_inhow")
 
 [node name="CoyoteTimer" type="Timer" parent="."]
-wait_time = 0.15
+wait_time = 0.1
 one_shot = true
 
 [node name="Hook" type="RigidBody2D" parent="."]
