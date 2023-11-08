@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://ctnprl2onkl33"]
+[gd_scene load_steps=5 format=3 uid="uid://ctnprl2onkl33"]
 
 [ext_resource type="PackedScene" uid="uid://de5np07xtuyii" path="res://player.tscn" id="1_b0081"]
 [ext_resource type="PackedScene" uid="uid://baja71qtuxvod" path="res://platform.tscn" id="2_od8jd"]
+[ext_resource type="PackedScene" uid="uid://c57tqn4o8qgks" path="res://Ball.tscn" id="3_gfue0"]
+[ext_resource type="PackedScene" uid="uid://bi3dwjmru1k10" path="res://Box.tscn" id="4_7l8tk"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -34,3 +36,10 @@ scale = Vector2(0.202405, 8.44212)
 [node name="Platform7" parent="." instance=ExtResource("2_od8jd")]
 position = Vector2(202, -76)
 rotation = -1.5708
+
+[node name="RigidBody2D" parent="." instance=ExtResource("3_gfue0")]
+position = Vector2(461, -451)
+
+[node name="RigidBody2D2" parent="." instance=ExtResource("4_7l8tk")]
+position = Vector2(1260, -76)
+mass = 0.32

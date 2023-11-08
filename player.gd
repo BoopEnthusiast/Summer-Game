@@ -10,8 +10,8 @@ const CHAIN_PULL = 105
 const MAX_SPEED = 2000
 const FRICTION_AIR = 0.95		# The friction while airborne
 const FRICTION_GROUND = 0.85	# The friction while on the ground
-
 const GRAVITY = 70				# Gravity applied every second
+const PUSH_FORCE = 500
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -84,7 +84,12 @@ func _physics_process(delta):
 	var was_touching = is_on_floor() or is_on_wall()
 	
 	velocity.x += walk
-	move_and_slide()
+	if move_and_slide():
+		for i in get_slide_collision_count():
+			var col = get_slide_collision(i)
+			if col.get_collider() is RigidBody2D:
+				col.get_collider().apply_force(col.get_normal() * -PUSH_FORCE)
+	
 	if not is_on_wall():
 		velocity.x -= walk
 	

@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://c57tqn4o8qgks"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_f5lnw"]
+radius = 107.019
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_serme"]
+
+[node name="RigidBody2D" type="RigidBody2D"]
+collision_layer = 6
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_f5lnw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(216, 216)
+texture = SubResource("PlaceholderTexture2D_serme")

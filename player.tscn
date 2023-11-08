@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://de5np07xtuyii"]
 
-[ext_resource type="Script" path="res://Player.gd" id="1_2u254"]
+[ext_resource type="Script" path="res://player.gd" id="1_fbe5r"]
 [ext_resource type="Script" path="res://Camera.gd" id="2_inhow"]
 [ext_resource type="SpriteFrames" uid="uid://jqd2gt255622" path="res://player_animation.tres" id="2_m5ja4"]
 [ext_resource type="Script" path="res://Hook.gd" id="3_obykk"]
@@ -16,7 +16,7 @@ size = Vector2(28.8889, 30.5556)
 scale = Vector2(0.6, 0.6)
 collision_layer = 5
 collision_mask = 5
-script = ExtResource("1_2u254")
+script = ExtResource("1_fbe5r")
 
 [node name="Collider" type="CollisionShape2D" parent="."]
 position = Vector2(-2.54313e-06, 8.33333)
