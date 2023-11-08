@@ -24,7 +24,7 @@ scale = Vector2(6, 6)
 shape = SubResource("RectangleShape2D_wkx4w")
 
 [node name="Camera" type="Camera2D" parent="."]
-zoom = Vector2(0.75, 0.75)
+zoom = Vector2(0.25, 0.25)
 position_smoothing_enabled = true
 rotation_smoothing_enabled = true
 script = ExtResource("2_inhow")

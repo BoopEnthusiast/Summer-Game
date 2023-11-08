@@ -42,4 +42,4 @@ position = Vector2(461, -451)
 
 [node name="RigidBody2D2" parent="." instance=ExtResource("4_7l8tk")]
 position = Vector2(1260, -76)
-mass = 0.32
+mass = 0.73
