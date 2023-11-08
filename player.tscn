@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" path="res://Player.gd" id="1_2u254"]
 [ext_resource type="Script" path="res://Camera.gd" id="2_inhow"]
+[ext_resource type="SpriteFrames" uid="uid://jqd2gt255622" path="res://player_animation.tres" id="2_m5ja4"]
 [ext_resource type="Script" path="res://Hook.gd" id="3_obykk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wkx4w"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_fjib1"]
+size = Vector2(28.8889, 30.5556)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_d1oqi"]
 
@@ -19,13 +19,15 @@ collision_mask = 5
 script = ExtResource("1_2u254")
 
 [node name="Collider" type="CollisionShape2D" parent="."]
+position = Vector2(-2.54313e-06, 8.33333)
 scale = Vector2(6, 6)
 shape = SubResource("RectangleShape2D_wkx4w")
 
-[node name="Sprite" type="Sprite2D" parent="."]
-position = Vector2(5.96049e-07, -2.74182e-06)
-scale = Vector2(120, 120)
-texture = SubResource("PlaceholderTexture2D_fjib1")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+top_level = true
+position = Vector2(0, -5.42101e-20)
+scale = Vector2(15, 15)
+sprite_frames = ExtResource("2_m5ja4")
 
 [node name="Camera" type="Camera2D" parent="."]
 zoom = Vector2(0.75, 0.75)

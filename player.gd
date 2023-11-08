@@ -22,7 +22,7 @@ var chain_velocity := Vector2(0,0)
 @onready var coyote_timer = $CoyoteTimer
 @onready var camera = $Camera
 @onready var grapple_hook = $Hook
-
+@onready var sprite = $AnimatedSprite2D
 
 func _input(event):
 	if event is InputEventMouseButton:
@@ -38,7 +38,21 @@ func _input(event):
 func _physics_process(delta):
 	# Walking
 	var walk = Input.get_axis("run_left", "run_right") * SPEED
+	"""
+	if Input.is_action_pressed("run_right"):
+		sprite.flip_h = false
+	elif Input.is_action_pressed("run_left"):
+		sprite.flip_h = true
 	
+	if not is_on_floor():
+		sprite.play("air")
+	elif Input.is_action_pressed("run_right"):
+		sprite.play("run")
+	elif Input.is_action_pressed("run_left"):
+		sprite.play("run")
+	else:
+		sprite.play("default")
+	"""
 	#Gravity
 	velocity.y += GRAVITY
 	
