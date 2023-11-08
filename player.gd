@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 const SPEED = 500.0
-const JUMP_VELOCITY = -1000.0
+const JUMP_VELOCITY = -1400.0
 const JUMPS = 1
 const CAMERA_DISTANCE = 0.3
 const CAMERA_MAX_VELOCITY = Vector2(500, 500)
@@ -11,7 +11,7 @@ const MAX_SPEED = 2000
 const FRICTION_AIR = 0.95		# The friction while airborne
 const FRICTION_GROUND = 0.85	# The friction while on the ground
 
-const GRAVITY = 40				# Gravity applied every second
+const GRAVITY = 70				# Gravity applied every second
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -61,10 +61,10 @@ func _physics_process(delta):
 		chain_velocity = to_local(grapple_hook.tip).normalized() * CHAIN_PULL
 		if chain_velocity.y > 0:
 			# Pulling down isn't as strong
-			chain_velocity.y *= 0.25
+			chain_velocity.y *= 0.55
 		else:
 			# Pulling up is stronger
-			chain_velocity.y *= 0.65
+			chain_velocity.y *= 1
 		if sign(chain_velocity.x) != sign(walk):
 			# if we are trying to walk in a different direction than the chain is pulling reduce its pull
 			chain_velocity.x *= 0.7
