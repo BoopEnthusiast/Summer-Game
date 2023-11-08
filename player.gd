@@ -38,7 +38,7 @@ func _input(event):
 func _physics_process(delta):
 	# Walking
 	var walk = Input.get_axis("run_left", "run_right") * SPEED
-	"""
+	
 	if Input.is_action_pressed("run_right"):
 		sprite.flip_h = false
 	elif Input.is_action_pressed("run_left"):
@@ -52,7 +52,7 @@ func _physics_process(delta):
 		sprite.play("run")
 	else:
 		sprite.play("default")
-	"""
+	
 	#Gravity
 	velocity.y += GRAVITY
 	
