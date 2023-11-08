@@ -54,7 +54,8 @@ func _physics_process(delta):
 		sprite.play("default")
 	
 	#Gravity
-	velocity.y += GRAVITY
+	if not is_on_floor():
+		velocity.y += GRAVITY
 	
 	# Grapple hook 
 	if grapple_hook.hooked:

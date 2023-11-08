@@ -5,9 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://c57tqn4o8qgks" path="res://Ball.tscn" id="3_gfue0"]
 [ext_resource type="PackedScene" uid="uid://bi3dwjmru1k10" path="res://Box.tscn" id="4_7l8tk"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Test room" type="Node2D"]
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("1_b0081")]
+[node name="Player" parent="." instance=ExtResource("1_b0081")]
 
 [node name="Platform" parent="." instance=ExtResource("2_od8jd")]
 position = Vector2(0, 115)

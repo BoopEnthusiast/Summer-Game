@@ -45,7 +45,7 @@ shape = SubResource("CircleShape2D_d1oqi")
 scale = Vector2(20, 20)
 texture = SubResource("PlaceholderTexture2D_md6y2")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -2.38419e-07)
 scale = Vector2(25, 25)
 sprite_frames = ExtResource("2_m5ja4")
