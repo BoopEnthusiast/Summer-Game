@@ -22,7 +22,7 @@ var chain_velocity := Vector2(0,0)
 @onready var coyote_timer = $CoyoteTimer
 @onready var camera = $Camera
 @onready var grapple_hook = $Hook
-@onready var sprite = $AnimatedSprite2D
+@onready var sprite = $Sprite
 
 func _input(event):
 	if event is InputEventMouseButton:
