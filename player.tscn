@@ -50,3 +50,4 @@ position = Vector2(0, -2.38419e-07)
 scale = Vector2(25, 25)
 sprite_frames = ExtResource("2_m5ja4")
 animation = &"run"
+frame_progress = 0.55579
