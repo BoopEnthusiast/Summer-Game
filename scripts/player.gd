@@ -40,16 +40,14 @@ func _physics_process(_delta):
 	# Walking
 	var walk = Input.get_axis("run_left", "run_right") * SPEED
 	
-	if Input.is_action_pressed("run_right"):
-		sprite.flip_h = false
-	elif Input.is_action_pressed("run_left"):
+	if Input.get_axis("run_left", "run_right") < 0:
 		sprite.flip_h = true
+	elif Input.get_axis("run_left", "run_right") > 0:
+		sprite.flip_h = false
 	
 	if not is_on_floor():
 		sprite.play("air")
-	elif Input.is_action_pressed("run_right"):
-		sprite.play("run")
-	elif Input.is_action_pressed("run_left"):
+	elif Input.get_axis("run_left", "run_right") != 0:
 		sprite.play("run")
 	else:
 		sprite.play("default")
@@ -132,10 +130,15 @@ func _physics_process(_delta):
 			velocity.y = JUMP_VELOCITY
 	
 	if is_on_floor():
-		if Input.is_action_pressed("run_left"):
+		if Input.is_action_pressed("run_left") and Input.is_action_pressed("run_right"):
+			sprite.rotation_degrees -= 90
+		elif Input.is_action_pressed("run_left"):
 			sprite.rotation_degrees += 90
+		elif Input.is_action_pressed("run_right"):
+			sprite.rotation_degrees -= 90
 		else:
 			sprite.rotation_degrees -= 90
+			print("helloooo")
 	elif is_on_wall():
 		if Input.is_action_pressed("run_left"):
 			sprite.rotation_degrees -= 45

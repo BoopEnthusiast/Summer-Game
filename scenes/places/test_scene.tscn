@@ -1,29 +1,14 @@
-[gd_scene load_steps=8 format=3 uid="uid://ctnprl2onkl33"]
+[gd_scene load_steps=6 format=3 uid="uid://ctnprl2onkl33"]
 
-[ext_resource type="PackedScene" uid="uid://b58lhuiemgics" path="res://scenes/player.tscn" id="1_b0081"]
-[ext_resource type="PackedScene" uid="uid://baja71qtuxvod" path="res://scenes/platform.tscn" id="2_od8jd"]
-[ext_resource type="PackedScene" uid="uid://c57tqn4o8qgks" path="res://scenes/Ball.tscn" id="3_gfue0"]
-[ext_resource type="PackedScene" uid="uid://bi3dwjmru1k10" path="res://scenes/Box.tscn" id="4_7l8tk"]
-[ext_resource type="Texture2D" uid="uid://cg1n7ybck3ygt" path="res://resources/ground-Sheet.png" id="5_f52r0"]
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5ibhi"]
-resource_name = "GroundSimple"
-texture = ExtResource("5_f52r0")
-texture_region_size = Vector2i(8, 8)
-0:0/0 = 0
-0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:0/0/physics_layer_0/angular_velocity = 0.0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
-0:1/0 = 0
-0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:1/0/physics_layer_0/angular_velocity = 0.0
-0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+[ext_resource type="PackedScene" uid="uid://b58lhuiemgics" path="res://scenes/things/player.tscn" id="1_b0081"]
+[ext_resource type="PackedScene" uid="uid://baja71qtuxvod" path="res://scenes/things/platform.tscn" id="2_od8jd"]
+[ext_resource type="PackedScene" uid="uid://c57tqn4o8qgks" path="res://scenes/things/Ball.tscn" id="3_gfue0"]
+[ext_resource type="PackedScene" uid="uid://bi3dwjmru1k10" path="res://scenes/things/Box.tscn" id="4_7l8tk"]
 
 [sub_resource type="TileSet" id="TileSet_crqrb"]
 tile_size = Vector2i(8, 8)
 physics_layer_0/collision_layer = 4
 physics_layer_0/collision_mask = 6
-sources/0 = SubResource("TileSetAtlasSource_5ibhi")
 
 [node name="Test room" type="Node2D"]
 
