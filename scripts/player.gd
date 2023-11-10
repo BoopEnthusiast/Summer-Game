@@ -130,17 +130,4 @@ func _physics_process(_delta):
 			velocity.y = JUMP_VELOCITY
 	
 	if is_on_floor():
-		if Input.is_action_pressed("run_left") and Input.is_action_pressed("run_right"):
-			sprite.rotation_degrees -= 90
-		elif Input.is_action_pressed("run_left"):
-			sprite.rotation_degrees += 90
-		elif Input.is_action_pressed("run_right"):
-			sprite.rotation_degrees -= 90
-		else:
-			sprite.rotation_degrees -= 90
-			print("helloooo")
-	elif is_on_wall():
-		if Input.is_action_pressed("run_left"):
-			sprite.rotation_degrees -= 45
-		if Input.is_action_pressed("run_right"):
-			sprite.rotation_degrees += 45
+		sprite.rotation_degrees = 0
