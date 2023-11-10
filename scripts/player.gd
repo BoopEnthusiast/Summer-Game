@@ -8,7 +8,7 @@ const CAMERA_DISTANCE = 0.3
 const CAMERA_MAX_VELOCITY = Vector2(500, 500)
 const WALL_SLIDE_SPEED = 150
 const CHAIN_PULL = 105
-const MAX_SPEED = 2000
+const MAX_SPEED = 5000
 const FRICTION_AIR = 0.95		# The friction while airborne
 const FRICTION_GROUND = 0.85	# The friction while on the ground
 const GRAVITY = 70				# Gravity applied every second
@@ -79,18 +79,17 @@ func _physics_process(_delta):
 	var was_touching = is_on_floor() or is_on_wall()
 	
 	velocity.x += walk
+	if move_and_slide():
+		for i in get_slide_collision_count():
+			var col = get_slide_collision(i)
+			if col.get_collider() is RigidBody2D:
+				col.get_collider().apply_force(col.get_normal() * -PUSH_FORCE)
 	sprite.material.set_shader_parameter("direction", velocity * 0.001)
 	sprite.rotation = get_angle_to(to_global(velocity.normalized())) - HALF_PI
 	while sprite.rotation < -HALF_PI:
 		sprite.rotation += PI
 	while sprite.rotation > HALF_PI:
 		sprite.rotation -= PI
-	if move_and_slide():
-		for i in get_slide_collision_count():
-			var col = get_slide_collision(i)
-			if col.get_collider() is RigidBody2D:
-				col.get_collider().apply_force(col.get_normal() * -PUSH_FORCE)
-	
 	if not is_on_wall():
 		velocity.x -= walk
 	

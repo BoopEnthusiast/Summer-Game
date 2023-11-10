@@ -10,7 +10,7 @@ polygon = PackedVector2Array(-40, -5, -40, 5, 40, 5, 40, -5)
 
 [node name="Platform" type="StaticBody2D"]
 scale = Vector2(6, 6)
-collision_layer = 6
+collision_layer = 4
 collision_mask = 6
 
 [node name="Collider" type="CollisionShape2D" parent="."]
