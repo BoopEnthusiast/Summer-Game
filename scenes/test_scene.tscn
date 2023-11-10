@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://ctnprl2onkl33"]
 
-[ext_resource type="PackedScene" uid="uid://b58lhuiemgics" path="res://player.tscn" id="1_b0081"]
-[ext_resource type="PackedScene" uid="uid://baja71qtuxvod" path="res://platform.tscn" id="2_od8jd"]
-[ext_resource type="PackedScene" uid="uid://c57tqn4o8qgks" path="res://Ball.tscn" id="3_gfue0"]
-[ext_resource type="PackedScene" uid="uid://bi3dwjmru1k10" path="res://Box.tscn" id="4_7l8tk"]
+[ext_resource type="PackedScene" uid="uid://b58lhuiemgics" path="res://scenes/player.tscn" id="1_b0081"]
+[ext_resource type="PackedScene" uid="uid://baja71qtuxvod" path="res://scenes/platform.tscn" id="2_od8jd"]
+[ext_resource type="PackedScene" uid="uid://c57tqn4o8qgks" path="res://scenes/Ball.tscn" id="3_gfue0"]
+[ext_resource type="PackedScene" uid="uid://bi3dwjmru1k10" path="res://scenes/Box.tscn" id="4_7l8tk"]
 
 [node name="Test room" type="Node2D"]
 

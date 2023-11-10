@@ -85,7 +85,6 @@ func _physics_process(_delta):
 		sprite.rotation += PI
 	while sprite.rotation > HALF_PI:
 		sprite.rotation -= PI
-	print(sprite.rotation)
 	if move_and_slide():
 		for i in get_slide_collision_count():
 			var col = get_slide_collision(i)

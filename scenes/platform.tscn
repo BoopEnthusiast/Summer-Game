@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://baja71qtuxvod"]
 
-[ext_resource type="Texture2D" uid="uid://dnv1urdsm0qdu" path="res://platform.png" id="1_dfxij"]
+[ext_resource type="Texture2D" uid="uid://dnv1urdsm0qdu" path="res://resources/platform.png" id="1_1tuhl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lknvi"]
 size = Vector2(4, 20)
@@ -19,7 +19,7 @@ shape = SubResource("RectangleShape2D_lknvi")
 
 [node name="Sprite" type="Sprite2D" parent="."]
 scale = Vector2(2.5, 2.5)
-texture = ExtResource("1_dfxij")
+texture = ExtResource("1_1tuhl")
 
 [node name="LightOcclusion" type="LightOccluder2D" parent="."]
 occluder = SubResource("OccluderPolygon2D_l57mh")

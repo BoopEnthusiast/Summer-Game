@@ -11,10 +11,10 @@ config_version=5
 [application]
 
 config/name="Summer Game"
-run/main_scene="res://test_scene.tscn"
+run/main_scene="res://scenes/test_scene.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 boot_splash/bg_color=Color(1, 0, 1, 1)
-config/icon="res://icon.svg"
+config/icon="res://resources/icon.svg"
 
 [display]
 
