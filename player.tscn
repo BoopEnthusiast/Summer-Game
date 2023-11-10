@@ -1,16 +1,21 @@
-[gd_scene load_steps=8 format=3 uid="uid://de5np07xtuyii"]
+[gd_scene load_steps=10 format=3 uid="uid://b58lhuiemgics"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_fbe5r"]
 [ext_resource type="Script" path="res://Camera.gd" id="2_inhow"]
 [ext_resource type="SpriteFrames" uid="uid://jqd2gt255622" path="res://player_animation.tres" id="2_m5ja4"]
 [ext_resource type="Script" path="res://Hook.gd" id="3_obykk"]
+[ext_resource type="Shader" path="res://player.gdshader" id="4_nxc3x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wkx4w"]
-size = Vector2(28.8889, 30.5556)
+size = Vector2(28.8889, 33.3333)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_d1oqi"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_md6y2"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_t0ond"]
+shader = ExtResource("4_nxc3x")
+shader_parameter/direction = Vector2(0, 0)
 
 [node name="Player" type="CharacterBody2D"]
 scale = Vector2(0.6, 0.6)
@@ -19,7 +24,6 @@ collision_mask = 5
 script = ExtResource("1_fbe5r")
 
 [node name="Collider" type="CollisionShape2D" parent="."]
-position = Vector2(-2.54313e-06, 8.33333)
 scale = Vector2(6, 6)
 shape = SubResource("RectangleShape2D_wkx4w")
 
@@ -30,7 +34,7 @@ rotation_smoothing_enabled = true
 script = ExtResource("2_inhow")
 
 [node name="CoyoteTimer" type="Timer" parent="."]
-wait_time = 0.1
+wait_time = 0.15
 one_shot = true
 
 [node name="Hook" type="RigidBody2D" parent="."]
@@ -46,8 +50,7 @@ scale = Vector2(20, 20)
 texture = SubResource("PlaceholderTexture2D_md6y2")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_t0ond")
 position = Vector2(0, -2.38419e-07)
 scale = Vector2(25, 25)
 sprite_frames = ExtResource("2_m5ja4")
-animation = &"run"
-frame_progress = 0.55579

@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+const HALF_PI = PI / 2
 const SPEED = 500.0
 const JUMP_VELOCITY = -1400.0
 const JUMPS = 1
@@ -35,7 +36,7 @@ func _input(event):
 			grapple_hook.release()
 
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	# Walking
 	var walk = Input.get_axis("run_left", "run_right") * SPEED
 	
@@ -74,17 +75,17 @@ func _physics_process(delta):
 		chain_velocity = Vector2(0,0)
 	velocity += chain_velocity
 	
-	# Move camera in direction moving
-	#camera.global_position = global_position + (velocity.clamp(-CAMERA_MAX_VELOCITY, CAMERA_MAX_VELOCITY) * CAMERA_DISTANCE)
-	
-	# Slide down wall
-	#if is_on_wall_only() and velocity.y > 0:
-	#	velocity.y = WALL_SLIDE_SPEED
-	
 	# Save for coyote timer check
 	var was_touching = is_on_floor() or is_on_wall()
 	
 	velocity.x += walk
+	sprite.material.set_shader_parameter("direction", velocity * 0.001)
+	sprite.rotation = get_angle_to(to_global(velocity.normalized())) - HALF_PI
+	while sprite.rotation < -HALF_PI:
+		sprite.rotation += PI
+	while sprite.rotation > HALF_PI:
+		sprite.rotation -= PI
+	print(sprite.rotation)
 	if move_and_slide():
 		for i in get_slide_collision_count():
 			var col = get_slide_collision(i)
@@ -131,3 +132,14 @@ func _physics_process(delta):
 		elif jumps_left >= 1:
 			jumps_left -= 1
 			velocity.y = JUMP_VELOCITY
+	
+	if is_on_floor():
+		if Input.is_action_pressed("run_left"):
+			sprite.rotation_degrees += 90
+		else:
+			sprite.rotation_degrees -= 90
+	elif is_on_wall():
+		if Input.is_action_pressed("run_left"):
+			sprite.rotation_degrees -= 45
+		if Input.is_action_pressed("run_right"):
+			sprite.rotation_degrees += 45

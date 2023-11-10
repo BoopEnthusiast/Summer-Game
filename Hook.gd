@@ -14,7 +14,7 @@ func _ready():
 	add_user_signal("object_hooked", [{"name": "object_hit", "type": "TYPE_KINEMATIC_COLLISION_2D"}])
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _physics_process(delta):
+func _physics_process(_delta):
 	global_position = tip
 	if flying:
 		var collider = move_and_collide(direction * SPEED)
