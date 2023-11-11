@@ -9,9 +9,9 @@ const CAMERA_MAX_VELOCITY = Vector2(500, 500)
 const WALL_SLIDE_SPEED = 150
 const CHAIN_PULL = 105
 const MAX_SPEED = 5000
-const FRICTION_AIR = 0.95		# The friction while airborne
-const FRICTION_GROUND = 0.85	# The friction while on the ground
-const GRAVITY = 70				# Gravity applied every second
+const FRICTION_AIR = 0.95
+const FRICTION_GROUND = 0.85
+const GRAVITY = 70
 const PUSH_FORCE = 500
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -131,3 +131,7 @@ func _physics_process(_delta):
 	
 	if is_on_floor():
 		sprite.rotation_degrees = 0
+
+
+func generate_OKLab_colors():
+	pass

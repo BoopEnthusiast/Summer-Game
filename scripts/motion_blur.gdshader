@@ -1,7 +1,7 @@
 shader_type canvas_item;
 uniform vec2 dir = vec2(0,0);
 uniform int quality = 50;
-
+/* YO IF YOU'RE READING THIS IT AIN'T MINE I GRABBED IT FROM GODOT SHADERS*/
 void vertex(){
 	vec2 blurSize = abs(dir) * 2.0;
 	VERTEX *= blurSize + 1.0;

@@ -1,5 +1,4 @@
 shader_type canvas_item;
-/* YO IF YOU'RE READING THIS IT AIN'T MINE I GRABBED IT FROM GODOT SHADERS*/
 uniform vec2 direction = vec2(0.0,0.0);
 //uniform float speed = 3.0;
 
