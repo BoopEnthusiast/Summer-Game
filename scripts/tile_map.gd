@@ -23,3 +23,4 @@ func _ready():
 	for i in range(texture.get_width()):
 		for o in range(texture.get_height()):
 			texture.get_image().set_pixel(i, o, colors[texture.get_image().get_pixel(i, o)])
+	
