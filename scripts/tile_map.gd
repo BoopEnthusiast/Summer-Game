@@ -24,3 +24,4 @@ func _ready():
 		for o in range(texture.get_height()):
 			texture.get_image().set_pixel(i, o, colors[texture.get_image().get_pixel(i, o)])
 	
+	# How do I change the texture of the tileset now?

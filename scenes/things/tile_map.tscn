@@ -86,3 +86,5 @@ layer_0/tile_data = PackedInt32Array(131059, 0, 0, 131060, 0, 0, 131061, 0, 0, 1
 script = ExtResource("2_dujlf")
 texture = ExtResource("1_txibw")
 color_seed = 806
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
