@@ -10,3 +10,6 @@
 texture = ExtResource("2_2n7t2")
 
 [node name="Player" parent="." instance=ExtResource("2_031s6")]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0, 0, 0, 1)

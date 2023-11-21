@@ -53,3 +53,5 @@ material = SubResource("ShaderMaterial_t0ond")
 position = Vector2(0, -2.38419e-07)
 scale = Vector2(25, 25)
 sprite_frames = ExtResource("5_wjkd4")
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
